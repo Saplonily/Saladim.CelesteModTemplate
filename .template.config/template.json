@@ -1,0 +1,13 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Saplonily",
+    "classifications": [
+        "Celeste",
+        "Mod",
+        "net452",
+        "library"
+    ],
+    "identity": "Saplonily.CelesteModTemplate.CSharp",
+    "name": "Celeste Mod Template (C#, Sdk-style) - Saplonily",
+    "shortName": "celemodcs"
+}

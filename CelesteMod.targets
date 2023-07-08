@@ -1,0 +1,15 @@
+<Project>
+	<!--Windows only for now-->
+	<Target Name="CopyModAssets" AfterTargets="PostBuildEvent">
+		<Copy SourceFiles="$(BaseOutputPath)$(Platform)\$(Configuration)\net452\$(AssemblyName).dll;" DestinationFolder="$(ModAssetsFolderName)"/>
+		<Copy SourceFiles="$(BaseOutputPath)$(Platform)\$(Configuration)\net452\$(AssemblyName).pdb;" DestinationFolder="$(ModAssetsFolderName)"/>
+		<Message Text="Copied dll and pdb." Importance="high"/>
+	</Target>
+
+	<Target Name="Checking" BeforeTargets="PreBuildEvent">
+		<Message Text="Checking celeste root path..." Importance="normal"/>
+		<Error Condition="!Exists($(CelesteRootPath))" Text="Celeste root path not found!"/>
+		<MakeDir Condition="!Exists($(ModAssetsFolderName))" Directories="$(ModAssetsFolderName)"/>
+	</Target>
+
+</Project>
