@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<Import Project="CelesteMod.props" />
-	<Import Project="Common.props" />
+	
 	<PropertyGroup>
 		<RootNamespace>$(AssemblyName)</RootNamespace>
 		<LangVersion>preview</LangVersion>
@@ -11,6 +11,13 @@
 		<Reference Include="System.Core" />
 		<Reference Include="System.Xml.Linq" />
 		<Reference Include="System.Xml" />
+
+		<Using Include="System" />
+		<Using Include="System.Collections.Generic" />
+		<Using Include="System.IO" />
+		<Using Include="System.Linq" />
+		<Using Include="System.Threading" />
+		<Using Include="System.Threading.Tasks" />
 	</ItemGroup>
 
 	<Import Project="CelesteMod.targets" />
