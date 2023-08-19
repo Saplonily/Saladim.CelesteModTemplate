@@ -9,8 +9,9 @@
 		<ItemGroup>
 			<ModAssetsFolderContents Include="$(ModAssetsFolderName)\**"/>
 		</ItemGroup>
-		<RemoveDir Condition="Exists('$(CelesteRootPath)\Mods\$(AssemblyName)')" Directories="$(CelesteRootPath)\Mods\$(AssemblyName)"/>
-		<MakeDir Directories="$(CelesteRootPath)\Mods\$(AssemblyName)"/>
+		<RemoveDir Condition="Exists('$(CelesteRootPath)\Mods\$(AssemblyName)') And '$(RemoveModsDirOnCompile)' == 'true'"
+             Directories="$(CelesteRootPath)\Mods\$(AssemblyName)"/>
+		<MakeDir Condition="!Exists('$(CelesteRootPath)\Mods\$(AssemblyName)')" Directories="$(CelesteRootPath)\Mods\$(AssemblyName)"/>
 		<Copy SourceFiles="@(ModAssetsFolderContents)"
 			  DestinationFolder="$(CelesteRootPath)\Mods\$(AssemblyName)\%(RecursiveDir)"
 			  SkipUnchangedFiles="true"/>
