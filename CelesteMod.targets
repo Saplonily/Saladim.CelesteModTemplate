@@ -21,6 +21,8 @@
 		<Message Text="Checking celeste root path..."/>
 		<Error Condition="!Exists($(CelesteRootPath))" Text="Celeste root path not found!"/>
 		<MakeDir Condition="!Exists($(ModAssetsFolderName))" Directories="$(ModAssetsFolderName)"/>
+		<Error Condition="!Exists('$(CelesteAssemblyPath)\Celeste.exe') And '$(EverestCoreVersion)' == 'true'"
+			   Text="You have used core versions Everest but without setting up legacyRef. Go to run 'setup legacyRef' in mod settings menu in game."/>
 	</Target>
 
 </Project>
