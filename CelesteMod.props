@@ -14,9 +14,9 @@
 	<Import Project="Common.props"/>
 
 	<PropertyGroup>
-		<EverestCoreVersion Condition="Exists('$(CelesteRootPath)\Celeste.dll')">true</EverestCoreVersion>
+		<EverestCoreVersion Condition="Exists('$(CelesteRootPath)/Celeste.dll')">true</EverestCoreVersion>
 		<CelesteAssemblyPath>$(CelesteRootPath)</CelesteAssemblyPath>
-		<CelesteAssemblyPath Condition="'$(EverestCoreVersion)' == 'true'">$(CelesteRootPath)\legacyRef</CelesteAssemblyPath>
+		<CelesteAssemblyPath Condition="'$(EverestCoreVersion)' == 'true'">$(CelesteRootPath)/legacyRef</CelesteAssemblyPath>
 	</PropertyGroup>
 
 	<!--常用Usings-->
@@ -31,27 +31,27 @@
 	<!--常见蔚蓝程序集引用-->
 	<ItemGroup Condition="'$(CommonCelesteReferences)' == 'true'">
 		<Reference Include="Celeste">
-			<HintPath>$(CelesteAssemblyPath)\Celeste.exe</HintPath>
+			<HintPath>$(CelesteAssemblyPath)/Celeste.exe</HintPath>
 			<Private>False</Private>
 		</Reference>
 		<Reference Include="FNA">
-			<HintPath>$(CelesteAssemblyPath)\FNA.dll</HintPath>
+			<HintPath>$(CelesteAssemblyPath)/FNA.dll</HintPath>
 			<Private>False</Private>
 		</Reference>
 		<Reference Include="MMHOOK_Celeste">
-			<HintPath>$(CelesteAssemblyPath)\MMHOOK_Celeste.dll</HintPath>
+			<HintPath>$(CelesteAssemblyPath)/MMHOOK_Celeste.dll</HintPath>
 			<Private>False</Private>
 		</Reference>
 		<Reference Include="YamlDotNet">
-			<HintPath>$(CelesteAssemblyPath)\YamlDotNet.dll</HintPath>
+			<HintPath>$(CelesteAssemblyPath)/YamlDotNet.dll</HintPath>
 			<Private>False</Private>
 		</Reference>
 		<Reference Include="MonoMod.Utils">
-			<HintPath>$(CelesteAssemblyPath)\MonoMod.Utils.dll</HintPath>
+			<HintPath>$(CelesteAssemblyPath)/MonoMod.Utils.dll</HintPath>
 			<Private>False</Private>
 		</Reference>
 		<Reference Include="Mono.Cecil">
-			<HintPath>$(CelesteAssemblyPath)\Mono.Cecil.dll</HintPath>
+			<HintPath>$(CelesteAssemblyPath)/Mono.Cecil.dll</HintPath>
 			<Private>False</Private>
 		</Reference>
 	</ItemGroup>
