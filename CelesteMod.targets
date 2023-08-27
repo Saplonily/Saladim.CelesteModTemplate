@@ -1,28 +1,32 @@
 <Project>
-	<!--Windows only for now-->
-	<Target Name="CopyModAssets" AfterTargets="PostBuildEvent">
-		<Message Importance="high" Text="core: $(EverestCoreVersion), asm: $(CelesteAssemblyPath), dir: $(CelesteRootPath)"/>
-		<Message Condition="'$(EverestCoreVersion)' == 'true'" Text="Detected core versions Everest." Importance="high"/>
+	<Target Name="CopyModAssembly" AfterTargets="PostBuildEvent">
+		<Error Condition="$(OS) != 'Windows_NT' And $(OS) != 'Unix'" Code="SMT02"
+			   Text="Sorry that this target doesn't support non-Windows_NT and non-Unix platforms."/>
+		<Message Importance="high" Text="Is core version: $(EverestCoreVersion), assembly path: $(CelesteAssemblyPath), root path: $(CelesteRootPath)"/>
 
-		<Copy SourceFiles="$(OutputPath)\$(AssemblyName).dll;" DestinationFolder="$(ModAssetsFolderName)"/>
-		<Copy SourceFiles="$(OutputPath)\$(AssemblyName).pdb;" DestinationFolder="$(ModAssetsFolderName)"/>
-		<ItemGroup>
-			<ModAssetsFolderContents Include="$(ModAssetsFolderName)\**"/>
-		</ItemGroup>
-		<RemoveDir Condition="Exists('$(CelesteRootPath)\Mods\$(AssemblyName)') And '$(RemoveModsDirOnCompile)' == 'true'"
-             Directories="$(CelesteRootPath)\Mods\$(AssemblyName)"/>
-		<MakeDir Condition="!Exists('$(CelesteRootPath)\Mods\$(AssemblyName)')" Directories="$(CelesteRootPath)\Mods\$(AssemblyName)"/>
-		<Copy SourceFiles="@(ModAssetsFolderContents)"
-			  DestinationFolder="$(CelesteRootPath)\Mods\$(AssemblyName)\%(RecursiveDir)"
-			  SkipUnchangedFiles="true"/>
-		<Message Text="Copied files in '$(ModAssetsFolderName)' to '$(CelesteRootPath)\Mods\$(AssemblyName)'." Importance="high"/>
+		<!--.dll and .pdb copying-->
+		<Copy SourceFiles="$(OutputPath)/$(AssemblyName).dll;" DestinationFolder="$(ModAssetsFolderName)"/>
+		<Copy SourceFiles="$(OutputPath)/$(AssemblyName).pdb;" DestinationFolder="$(ModAssetsFolderName)"/>
+
+		<PropertyGroup Condition="!Exists('$(CelesteRootPath)/Mods/$(AssemblyName)_link')">
+			<_ModLinkNotExists>true</_ModLinkNotExists>
+		</PropertyGroup>
+		<Message Importance="high" Condition="'$(_ModLinkNotExists)' == 'true'" Text="Symbolic link not created, hang on..."/>
+		<Exec Condition="'$(_ModLinkNotExists)' == 'true' And '$(OS)' == 'Windows_NT'"
+			  Command="mklink /d &quot;$(CelesteRootPath)\Mods\$(AssemblyName)_link&quot; &quot;$(MSBuildProjectDirectory)\$(ModAssetsFolderName)&quot;"/>
+		<Exec Condition="'$(_ModLinkNotExists)' == 'true' And '$(OS)' == 'Unix'"
+			  Command="ln -s &quot;$(MSBuildProjectDirectory)/$(ModAssetsFolderName)&quot; &quot;$(CelesteRootPath)/Mods/$(AssemblyName)_link&quot;"/>
+
+		<Message Text="Copied .dll and .pdb files to ModAssetsFolder($(ModAssetsFolderName))." Importance="high"/>
 	</Target>
 
-	<Target Name="Checking" BeforeTargets="PreBuildEvent">
+	<Target Name="CheckingCelestePaths" BeforeTargets="PreBuildEvent">
 		<Message Text="Checking celeste root path..."/>
 		<Error Condition="!Exists($(CelesteRootPath))" Text="Celeste root path not found!"/>
+		<!--Make our ModFolder directory if necessary-->
 		<MakeDir Condition="!Exists($(ModAssetsFolderName))" Directories="$(ModAssetsFolderName)"/>
-		<Error Condition="!Exists('$(CelesteAssemblyPath)\Celeste.exe') And '$(EverestCoreVersion)' == 'true'"
+		<!--Core versions assembly checking-->
+		<Error Condition="!Exists('$(CelesteAssemblyPath)/Celeste.exe') And '$(EverestCoreVersion)' == 'true'" Code="SMT01"
 			   Text="You have used core versions Everest but without setting up legacyRef. Go to run 'setup legacyRef' in mod settings menu in game."/>
 	</Target>
 

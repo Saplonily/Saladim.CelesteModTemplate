@@ -6,7 +6,7 @@
 		<Platforms>x86</Platforms>
 
 		<CommonCelesteUsings>false</CommonCelesteUsings>
-		<EverestCoreVersion/>
+		<EverestCoreVersion>false</EverestCoreVersion>
 		<CelesteRootPath/>
 		<ModAssetsFolderName>ModFolder</ModAssetsFolderName>
 	</PropertyGroup>
