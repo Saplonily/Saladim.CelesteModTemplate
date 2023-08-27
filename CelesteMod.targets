@@ -12,8 +12,10 @@
 			<_ModLinkNotExists>true</_ModLinkNotExists>
 		</PropertyGroup>
 		<Message Importance="high" Condition="'$(_ModLinkNotExists)' == 'true'" Text="Symbolic link not created, hang on..."/>
+		<!--create symbolic link on windows-->
 		<Exec Condition="'$(_ModLinkNotExists)' == 'true' And '$(OS)' == 'Windows_NT'"
 			  Command="mklink /d &quot;$(CelesteRootPath)\Mods\$(AssemblyName)_link&quot; &quot;$(MSBuildProjectDirectory)\$(ModAssetsFolderName)&quot;"/>
+		<!--create symbolic link on macos-->
 		<Exec Condition="'$(_ModLinkNotExists)' == 'true' And '$(OS)' == 'Unix'"
 			  Command="ln -s &quot;$(MSBuildProjectDirectory)/$(ModAssetsFolderName)&quot; &quot;$(CelesteRootPath)/Mods/$(AssemblyName)_link&quot;"/>
 
@@ -29,5 +31,4 @@
 		<Error Condition="!Exists('$(CelesteAssemblyPath)/Celeste.exe') And '$(EverestCoreVersion)' == 'true'" Code="SMT01"
 			   Text="You have used core versions Everest but without setting up legacyRef. Go to run 'setup legacyRef' in mod settings menu in game."/>
 	</Target>
-
 </Project>
