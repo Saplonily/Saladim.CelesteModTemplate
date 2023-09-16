@@ -15,7 +15,7 @@
 		<!--create symbolic link on windows-->
 		<Exec Condition="'$(_ModLinkNotExists)' == 'true' And '$(OS)' == 'Windows_NT'"
 			  Command="mklink /d &quot;$(CelesteRootPath)\Mods\$(AssemblyName)_link&quot; &quot;$(MSBuildProjectDirectory)\$(ModAssetsFolderName)&quot;"/>
-		<!--create symbolic link on macos-->
+		<!--create symbolic link on unix-->
 		<Exec Condition="'$(_ModLinkNotExists)' == 'true' And '$(OS)' == 'Unix'"
 			  Command="ln -s &quot;$(MSBuildProjectDirectory)/$(ModAssetsFolderName)&quot; &quot;$(CelesteRootPath)/Mods/$(AssemblyName)_link&quot;"/>
 
