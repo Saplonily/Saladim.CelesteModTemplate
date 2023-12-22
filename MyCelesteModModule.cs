@@ -1,10 +1,9 @@
 namespace MyCelesteMod;
 
-public class MyCelesteMod : EverestModule
+public class MyCelesteModModule : EverestModule
 {
     public override void Load()
     {
-        
     }
 
     public override void Unload()
