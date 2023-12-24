@@ -1,0 +1,18 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Saplonily",
+    "classifications": [
+        "Celeste",
+        "Modding",
+        "Everest",
+        "C#"
+    ],
+    "identity": "Sap.CelesteModTemplate",
+    "name": "Celeste Mod Template",
+    "shortName": "sapcelestemod",
+    "sourceName": "MyCelesteMod",
+    "tags": {
+        "language": "C#",
+        "type": "project"
+    }
+}
