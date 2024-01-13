@@ -43,8 +43,9 @@
     <!--Make our ModFolder directory if necessary-->
     <MakeDir Condition="!Exists($(ModAssetsFolderName))" Directories="$(ModAssetsFolderName)"/>
     <!--Core versions assembly checking-->
-    <Error Condition="!Exists('$(CelesteAssemblyPath)/Celeste.exe') And '$(EverestCoreVersion)' == 'true'" Code="SMT01"
-			   Text="You have used core versions Everest but without setting up legacyRef. Go to run 'setup legacyRef' in mod settings menu in game."/>
+    <Error Condition="!Exists('$(CelesteAssemblyPath)/Celeste.exe') And !Exists('$(CelesteAssemblyPath)/Celeste') And '$(EverestCoreVersion)' == 'true'" 
+            Code="SMT01"
+			Text="You have used core versions Everest but without setting up legacyRef. Go to run 'setup legacyRef' in mod settings menu in game."/>
   </Target>
 
   <Target Name="CleanRemoteFolder" BeforeTargets="Clean">
