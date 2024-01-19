@@ -3,9 +3,8 @@
     "author": "Saplonily",
     "classifications": [
         "Celeste",
-        "Modding",
-        "Everest",
-        "C#"
+        "Mod",
+        "Everest"
     ],
     "identity": "Sap.CelesteModTemplate",
     "name": "Celeste Mod Template",
@@ -15,16 +14,18 @@
         "language": "C#",
         "type": "project"
     },
-    "symbols":{
+    "symbols": {
         "celeste-root-path": {
-          "type": "parameter",
-          "defaultValue": "C:/Program Files (x86)/Steam/steamapps/common/Celeste",
-          "replaces":"{CelesteRootPath_FromTemplate}"
+            "type": "parameter",
+            "datatype": "text",
+            "replaces": "{CelesteRootPath_FromTemplate}",
+            "defaultValue": "C:/Program Files (x86)/Steam/steamapps/common/Celeste"
         },
         "core-only": {
-          "type": "parameter",
-          "defaultValue": "false",
-          "replaces":"{CoreOnlyMod_FromTemplate}"
+            "type": "parameter",
+            "datatype": "bool",
+            "replaces": "{CoreOnlyMod_FromTemplate}",
+            "defaultValue": "false"
         }
-      }
+    }
 }

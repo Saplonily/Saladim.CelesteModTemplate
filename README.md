@@ -1,3 +1,3 @@
 # Saladim.CelesteModTemplate
 
-Another lightweight Celeste Mod Template! Used by [CelesteModTotorial (sadly chinese only)](https://celestemod.saplonily.link)!
+Another lightweight Celeste Mod Template! Used by [CelesteModTutorial (sadly chinese only)](https://celestemod.saplonily.link)!
