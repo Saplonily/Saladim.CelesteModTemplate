@@ -3,21 +3,22 @@
   <PropertyGroup>
     <PackageId>Saladim.CelesteModTemplate</PackageId>
     <PackageVersion>0.2.1</PackageVersion>
-    <Title>Saladim.CelesteModTemplate</Title>
+    <Title>Saladim Celeste Mod Template</Title>
     <Authors>Saplonily</Authors>
-    <Description>A template for celeste modding.</Description>
+    <Description>Another template for celeste modding.</Description>
     <PackageTags>Celeste;Everest;Modding</PackageTags>
-    <PackageProjectUrl>https://github.com/Saplonily/celeste-mod-template-sdkstyled</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/Saplonily/Saladim.CelesteModTemplate</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
 
     <PackageType>Template</PackageType>
-    <TargetFramework>net452</TargetFramework>
+    <TargetFrameworks>net452;net7.0</TargetFrameworks>
     <IncludeContentInPack>true</IncludeContentInPack>
     <IncludeBuildOutput>false</IncludeBuildOutput>
     <ContentTargetFolders>content</ContentTargetFolders>
     <NoWarn>$(NoWarn);NU5128</NoWarn>
     <NoDefaultExcludes>true</NoDefaultExcludes>
+    <PackageIcon>icon.png</PackageIcon>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -32,6 +33,7 @@
     <Content Include="content\**\*" Exclude="content\**\bin\**;content\**\obj\**" />
     <Compile Remove="**\*" />
     <None Include="README.md" Pack="true" PackagePath="\"/>
+    <None Include="icon.png" Pack="true" PackagePath="\" />
   </ItemGroup>
 
 </Project>
