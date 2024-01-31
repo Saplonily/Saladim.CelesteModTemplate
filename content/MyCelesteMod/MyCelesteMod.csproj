@@ -2,7 +2,7 @@
 	<Import Project="CelesteMod.props" />
 	
 	<PropertyGroup>
-		<RootNamespace>$(AssemblyName)</RootNamespace>
+		<RootNamespace>Celeste.Mod.$(AssemblyName)</RootNamespace>
 		<LangVersion>preview</LangVersion>
 	</PropertyGroup>
 
