@@ -18,14 +18,36 @@
         "celeste-root-path": {
             "type": "parameter",
             "datatype": "text",
-            "replaces": "{CelesteRootPath_FromTemplate}",
+            "replaces": "$(TemplateCelesteRootPath)",
             "defaultValue": "C:/Program Files (x86)/Steam/steamapps/common/Celeste"
         },
         "core-only": {
             "type": "parameter",
             "datatype": "bool",
-            "replaces": "{CoreOnlyMod_FromTemplate}",
+            "replaces": "$(TemplateCoreOnlyMod)",
             "defaultValue": "false"
         }
-    }
+    },
+    "sources": [
+        {
+            "exclude": [
+                "ModFolder/everest-core.yaml",
+                ".template.config/**"
+            ],
+            "modifiers": [
+                {
+                    "condition": "core-only",
+                    "include": [
+                        "ModFolder/everest-core.yaml"
+                    ],
+                    "exclude": [
+                        "ModFolder/everest.yaml"
+                    ],
+                    "rename": {
+                        "everest-core.yaml": "everest.yaml"
+                    }
+                }
+            ]
+        }
+    ]
 }
