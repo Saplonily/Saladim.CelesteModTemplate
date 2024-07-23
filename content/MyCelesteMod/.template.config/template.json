@@ -2,9 +2,7 @@
     "$schema": "http://json.schemastore.org/template",
     "author": "Saplonily",
     "classifications": [
-        "Celeste",
-        "Mod",
-        "Everest"
+        "Celeste"
     ],
     "identity": "Sap.CelesteModTemplate",
     "name": "Celeste Mod Template",
@@ -20,33 +18,12 @@
             "datatype": "text",
             "replaces": "$(TemplateCelesteRootPath)",
             "defaultValue": "C:/Program Files (x86)/Steam/steamapps/common/Celeste"
-        },
-        "core-only": {
-            "type": "parameter",
-            "datatype": "bool",
-            "replaces": "$(TemplateCoreOnlyMod)",
-            "defaultValue": "false"
         }
     },
     "sources": [
         {
             "exclude": [
-                "ModFolder/everest-core.yaml",
                 ".template.config/**"
-            ],
-            "modifiers": [
-                {
-                    "condition": "core-only",
-                    "include": [
-                        "ModFolder/everest-core.yaml"
-                    ],
-                    "exclude": [
-                        "ModFolder/everest.yaml"
-                    ],
-                    "rename": {
-                        "everest-core.yaml": "everest.yaml"
-                    }
-                }
             ]
         }
     ]

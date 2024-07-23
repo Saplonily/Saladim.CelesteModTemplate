@@ -1,19 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-	<Import Project="CelesteMod.props" />
-	
-	<PropertyGroup>
-		<RootNamespace>Celeste.Mod.$(AssemblyName)</RootNamespace>
-		<LangVersion>preview</LangVersion>
-	</PropertyGroup>
+  <Import Project="CelesteMod.props" />
 
-	<ItemGroup>
-		<Using Include="System" />
-		<Using Include="System.Collections.Generic" />
-		<Using Include="System.IO" />
-		<Using Include="System.Linq" />
-		<Using Include="System.Threading" />
-		<Using Include="System.Threading.Tasks" />
-	</ItemGroup>
+  <PropertyGroup>
+    <CelesteRootPath>$(TemplateCelesteRootPath)</CelesteRootPath>
+    <RootNamespace>Celeste.Mod.$(AssemblyName)</RootNamespace>
+    <LangVersion>preview</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
 
-	<Import Project="CelesteMod.targets" />
+  <Import Project="CelesteMod.targets" />
 </Project>
