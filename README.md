@@ -1,3 +1,3 @@
 # Saladim.CelesteModTemplate
 
-Another CelesteModTemplate used by [CelesteModTutorial](https://celestemod.saplonily.link) (sadly chinese only).
+Another CelesteModTemplate used by [CelesteModTutorial](https://saplonily.elecho.dev/celeste_mod_tutorial) (sadly chinese only).
