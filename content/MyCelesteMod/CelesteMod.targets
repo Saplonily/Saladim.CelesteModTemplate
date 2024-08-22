@@ -1,14 +1,13 @@
 <Project>
 
   <Target Name="PostModBuild" AfterTargets="AfterBuild">
-    <Message Text="Post mod build, root path: $(CelesteRootPath)" Importance="high"/>
     <Error Condition="'$(ModAssetsFolderName)' == ''" Text="ModAssetsFolderName is not set." Code="SMT04"/>
 
     <!--.dll and .pdb files copying-->
     <ItemGroup>
       <_CompileOutput Include="$(OutputPath)/**"/>
     </ItemGroup>
-    <Copy SourceFiles="@(_CompileOutput)" DestinationFolder="$(ModAssetsFolderName)/Code"/>
+    <Copy SourceFiles="@(_CompileOutput)" DestinationFolder="$(ModAssetsFolderName)/Code/%(RecursiveDir)" SkipUnchangedFiles="true"/>
 
     <CallTarget Condition="$(ModAssetsCopyType) == 'link'" Targets="CheckAndCreateSymbolicLink"/>
     <CallTarget Condition="$(ModAssetsCopyType) == 'copy'" Targets="CopyModFolder"/>

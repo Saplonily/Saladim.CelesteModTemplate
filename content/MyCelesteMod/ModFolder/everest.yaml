@@ -2,5 +2,5 @@
   Version: 0.1.0
   DLL: Code/MyCelesteMod.dll
   Dependencies:
-    - Name: Everest
-      Version: 1.3971.0
+    - Name: EverestCore
+      Version: 1.4465.0
