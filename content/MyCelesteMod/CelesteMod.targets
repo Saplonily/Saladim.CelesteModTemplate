@@ -3,7 +3,7 @@
   <Target Name="PostModBuild" AfterTargets="AfterBuild">
     <Error Condition="'$(ModAssetsFolderName)' == ''" Text="ModAssetsFolderName is not set." Code="SMT04"/>
 
-    <!--.dll and .pdb files copying-->
+    <!--copy compile output files-->
     <ItemGroup>
       <_CompileOutput Include="$(OutputPath)/**"/>
     </ItemGroup>

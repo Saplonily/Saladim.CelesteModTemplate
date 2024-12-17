@@ -13,7 +13,7 @@
     <GenerateDependencyFile>false</GenerateDependencyFile>
   </PropertyGroup>
 
-  <ItemGroup Condition="'$(ImplicitUsings)' == 'true'">
+  <ItemGroup Condition="'$(ImplicitUsings)' == 'true' Or '$(ImplicitUsings)' == 'enable'">
     <Using Include="Microsoft.Xna.Framework" />
     <Using Include="Monocle" />
     <Using Include="Celeste" />

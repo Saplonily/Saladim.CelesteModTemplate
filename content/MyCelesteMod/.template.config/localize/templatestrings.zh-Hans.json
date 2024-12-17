@@ -1,0 +1,7 @@
+{
+    "author": "Saplonily",
+    "name": "Celeste Mod 模板",
+    "description": "创建用于 Everest API 的 Celeste Mod.",
+    "symbols/CelesteRootPath/displayName": "Celeste 所在的目录",
+    "symbols/CelesteRootPath/description": "用于寻找 Celeste 程序集所在的位置。"
+}

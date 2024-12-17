@@ -3,8 +3,8 @@
 
   <PropertyGroup>
     <CelesteRootPath>$(TemplateCelesteRootPath)</CelesteRootPath>
-    <RootNamespace>Celeste.Mod.$(AssemblyName)</RootNamespace>
-    <LangVersion>preview</LangVersion>
+    <RootNamespace>Celeste.Mod.MyCelesteMod</RootNamespace>
+    <LangVersion>latest</LangVersion>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
