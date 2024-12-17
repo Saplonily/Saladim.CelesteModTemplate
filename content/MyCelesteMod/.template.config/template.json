@@ -71,7 +71,7 @@
             "dataType": "bool",
             "defaultValue": "true",
             "displayName": "Use analyzer",
-            "description": "Whether to use the celeste mod analyzer."
+            "description": "Whether to use the celeste mod analyzer. A Roslyn analyzer for Celeste mods."
         }
     },
     "sources": [

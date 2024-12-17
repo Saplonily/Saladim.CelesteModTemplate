@@ -6,6 +6,8 @@
     <RootNamespace>Celeste.Mod.MyCelesteMod</RootNamespace>
     <LangVersion>latest</LangVersion>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UseCelesteAnalyzer Condition="'$(UseAnalyzer)' == 'false'">false</UseCelesteAnalyzer>
+    <UseCelestePublicizer Condition="'$(UsePublicizer)' == 'false'">false</UseCelestePublicizer>
   </PropertyGroup>
 
   <ItemGroup>
