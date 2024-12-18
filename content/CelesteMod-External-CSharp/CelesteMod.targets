@@ -41,7 +41,9 @@
 
   <Target Name="CheckCelestePaths" BeforeTargets="PreBuildEvent">
     <Message Text="Checking celeste root path..."/>
-    <Error Condition="!Exists('$(CelesteRootPath)/Celeste.exe') And !Exists('$(CelesteRootPath)/Celeste')" Text="Celeste not found." Code="SMT01"/>
+    <Error Condition="!Exists('$(CelesteRootPath)/Celeste.exe') And !Exists('$(CelesteRootPath)/Celeste')"
+         Text="Celeste not found. Please check your CelesteRootPath property."
+         Code="SMT01"/>
     <Error Condition="!Exists('$(CelesteRootPath)/Celeste.Mod.mm.dll')" Text="Everest not installed." Code="SMT02"/>
     <Error Condition="Exists('$(CelesteRootPath)/Celeste.exe.config')"
            Code="SMT03" Text="Legacy versions of Everest are not supported. Please update your Everest to 4465+."/>
