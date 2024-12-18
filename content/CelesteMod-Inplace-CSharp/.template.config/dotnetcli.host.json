@@ -1,0 +1,29 @@
+{
+    "$schema": "http://json.schemastore.org/dotnetcli.host",
+    "symbolInfo": {
+        "CelesteRootPath": {
+            "shortName": "c"
+        },
+        "IncludeSession": {
+            "shortName": "ss"
+        },
+        "IncludeSettings": {
+            "shortName": "st"
+        },
+        "IncludeSaveData": {
+            "shortName": "sd"
+        },
+        "EverestVersion": {
+            "shortName": "ev"
+        },
+        "ModInitialVersion": {
+            "shortName": "mv"
+        },
+        "UsePublicizer": {
+            "shortName": "up"
+        },
+        "UseAnalyzer": {
+            "shortName": "ua"
+        }
+    }
+}

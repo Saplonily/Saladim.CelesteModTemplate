@@ -1,0 +1,21 @@
+{
+    "author": "Saplonily",
+    "name": "Celeste Mod（外部）",
+    "description": "创建用于 Everest API 的 Celeste Mod.",
+    "symbols/CelesteRootPath/displayName": "Celeste 所在的目录",
+    "symbols/CelesteRootPath/description": "用于寻找 Celeste 程序集所在的位置。",
+    "symbols/IncludeSession/displayName": "包含 Session 类",
+    "symbols/IncludeSession/description": "包含一个空的 EverestModuleSession 类，并配置 Module 获取它。",
+    "symbols/IncludeSettings/displayName": "包含 Settings 类",
+    "symbols/IncludeSettings/description": "包含一个空的 EverestModuleSettings 类，并配置 Module 获取它。",
+    "symbols/IncludeSaveData/displayName": "包含 SaveData 类",
+    "symbols/IncludeSaveData/description": "包含一个空的 EverestModuleSaveData 类，并配置 Module 获取它。",
+    "symbols/EverestVersion/displayName": "Everest 版本",
+    "symbols/EverestVersion/description": "在 everest.yaml 中使用的 Everest 版本。",
+    "symbols/ModInitialVersion/displayName": "Mod 初始版本",
+    "symbols/ModInitialVersion/description": "Mod 初始版本，替换 everest.yaml 中的版本。",
+    "symbols/UsePublicizer/displayName": "使用 Publicizer",
+    "symbols/UsePublicizer/description": "是否使用 Publicize 后的 Celeste 程序集。",
+    "symbols/UseAnalyzer/displayName": "使用 Celeste Mod 分析器",
+    "symbols/UseAnalyzer/description": "是否使用 Celeste Mod 分析器。一个用于 Celeste Mod 的 Roslyn 分析器。"
+}

@@ -1,0 +1,6 @@
+- Name: MyCelesteMod
+  Version: $(TemplateModInitialVersion)
+  DLL: Code/MyCelesteMod.dll
+  Dependencies:
+    - Name: EverestCore
+      Version: 1.$(TemplateEverestVersion).0

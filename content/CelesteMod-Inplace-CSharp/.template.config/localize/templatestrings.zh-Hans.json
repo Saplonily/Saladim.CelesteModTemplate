@@ -1,9 +1,7 @@
 {
     "author": "Saplonily",
-    "name": "Celeste Mod 模板",
+    "name": "Celeste Mod（就地）",
     "description": "创建用于 Everest API 的 Celeste Mod.",
-    "symbols/CelesteRootPath/displayName": "Celeste 所在的目录",
-    "symbols/CelesteRootPath/description": "用于寻找 Celeste 程序集所在的位置。",
     "symbols/IncludeSession/displayName": "包含 Session 类",
     "symbols/IncludeSession/description": "包含一个空的 EverestModuleSession 类，并配置 Module 获取它。",
     "symbols/IncludeSettings/displayName": "包含 Settings 类",

@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="CelesteMod.props" />
+
+  <PropertyGroup>
+    <CelesteRootPath>$(TemplateCelesteRootPath)</CelesteRootPath>
+    <RootNamespace>Celeste.Mod.MyCelesteMod</RootNamespace>
+    <LangVersion>latest</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseCelesteAnalyzer Condition="'$(UseAnalyzer)' == 'false'">false</UseCelesteAnalyzer>
+    <UseCelestePublicizer Condition="'$(UsePublicizer)' == 'false'">false</UseCelestePublicizer>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="CelesteMod.props">
+      <Visible>false</Visible>
+    </None>
+    <None Include="CelesteMod.targets">
+      <Visible>false</Visible>
+    </None>
+  </ItemGroup>
+
+  <Import Project="CelesteMod.targets" />
+</Project>
