@@ -76,19 +76,19 @@
                 {
                     "condition": "(!IncludeSession)",
                     "exclude": [
-                        "MyCelesteModSession.cs"
+                        "Source/MyCelesteModSession.cs"
                     ]
                 },
                 {
                     "condition": "(!IncludeSettings)",
                     "exclude": [
-                        "MyCelesteModSettings.cs"
+                        "Source/MyCelesteModSettings.cs"
                     ]
                 },
                 {
                     "condition": "(!IncludeSaveData)",
                     "exclude": [
-                        "MyCelesteModSaveData.cs"
+                        "Source/MyCelesteModSaveData.cs"
                     ]
                 }
             ]
