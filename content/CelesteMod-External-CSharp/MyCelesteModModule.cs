@@ -21,6 +21,7 @@ public class MyCelesteModModule : EverestModule
 #endif
     public override void Load()
     {
+        Instance = this;
     }
 
     public override void Unload()
