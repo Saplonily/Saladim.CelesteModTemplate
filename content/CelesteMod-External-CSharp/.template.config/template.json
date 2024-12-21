@@ -80,6 +80,10 @@
                 ".template.config/**",
                 ".vs/**"
             ],
+            "copyOnly": [
+                "CelesteMod.props",
+                "CelesteMod.targets"
+            ],
             "modifiers": [
                 {
                     "condition": "(!IncludeSession)",
