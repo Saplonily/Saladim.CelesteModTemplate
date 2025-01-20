@@ -61,6 +61,10 @@
       <HintPath>$(CelesteRootPath)/MonoMod.RuntimeDetour.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="MonoMod.Patcher">
+      <HintPath>$(CelesteRootPath)/MonoMod.Patcher.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
   </ItemGroup>
 
 </Project>
