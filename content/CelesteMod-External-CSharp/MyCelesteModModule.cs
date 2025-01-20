@@ -1,6 +1,6 @@
 namespace Celeste.Mod.MyCelesteMod;
 
-public class MyCelesteModModule : EverestModule
+public sealed class MyCelesteModModule : EverestModule
 {
     public static MyCelesteModModule Instance { get; private set; }
 
