@@ -17,10 +17,6 @@
            Code="SMT03" Text="Legacy versions of Everest are not supported. Please update your Everest to 4465+."/>
   </Target>
 
-  <Target Name="CleanFolder" BeforeTargets="Clean">
-    <RemoveDir Directories="../Code"/>
-  </Target>
-
   <ItemGroup>
     <Reference Include="@(CelesteModReference->'%(Identity)')">
       <HintPath>$(CelesteRootPath)/Mods/Cache/%(Identity).%(Identity).dll</HintPath>

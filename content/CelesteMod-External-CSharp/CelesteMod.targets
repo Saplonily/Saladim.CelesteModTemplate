@@ -49,11 +49,25 @@
            Code="SMT03" Text="Legacy versions of Everest are not supported. Please update your Everest to 4465+."/>
   </Target>
 
-  <Target Name="CleanRemoteFolder" BeforeTargets="Clean">
+  <Target Name="CleanRemoteFolder" BeforeTargets="Clean" Condition="$(ModAssetsCopyType) == 'copy'">
     <Error Condition="'$(ModAssetsFolderName)' == ''" Text="ModAssetsFolderName is not set." Code="SMT04"/>
-    <RemoveDir Directories="$(CelesteRootPath)/Mods/$(AssemblyName)_link" Condition="Exists('$(CelesteRootPath)/Mods/$(AssemblyName)_link')"/>
-    <RemoveDir Directories="$(CelesteRootPath)/Mods/$(AssemblyName)_copy" Condition="Exists('$(CelesteRootPath)/Mods/$(AssemblyName)_copy')"/>
-    <RemoveDir Directories="$(ModAssetsFolderName)/Code"/>
+
+    <ItemGroup>
+      <_FilesToDelete Include="$(ModAssetsFolderName)/Code/**" />
+      <_FilesToDelete Include="$(CelesteRootPath)/Mods/$(AssemblyName)_copy/Code/**" />
+    </ItemGroup>
+    
+    <Delete Files="@(_FilesToDelete)" />
+  </Target>
+
+  <Target Name="CleanInplaceFolder" BeforeTargets="Clean" Condition="$(ModAssetsCopyType) == 'link'">
+    <Error Condition="'$(ModAssetsFolderName)' == ''" Text="ModAssetsFolderName is not set." Code="SMT04"/>
+
+    <ItemGroup>
+      <_FilesToDelete Include="$(ModAssetsFolderName)/Code/**" />
+    </ItemGroup>
+
+    <Delete Files="@(_FilesToDelete)" />
   </Target>
 
   <ItemGroup>
