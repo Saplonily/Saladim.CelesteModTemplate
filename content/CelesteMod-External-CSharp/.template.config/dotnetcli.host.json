@@ -13,9 +13,6 @@
         "IncludeSaveData": {
             "shortName": "sd"
         },
-        "EverestVersion": {
-            "shortName": "ev"
-        },
         "ModInitialVersion": {
             "shortName": "mv"
         },
@@ -24,6 +21,12 @@
         },
         "UseAnalyzer": {
             "shortName": "ua"
+        },
+        "IncludePublishToZipPSScript": {
+            "shortName": "ps"
+        },
+        "UseDotNet8": {
+            "shortName": "e8"
         }
     }
 }

@@ -9,11 +9,19 @@
     "shortName": "sapcelestemodi",
     "sourceName": "MyCelesteMod",
     "preferNameDirectory": true,
+    "defaultName": "CelesteHelper1",
     "tags": {
         "language": "C#",
         "type": "project"
     },
     "symbols": {
+        "UseDotNet8":{
+            "type": "parameter",
+            "datatype":"bool",
+            "defaultValue": "true",
+            "displayName": "Target Everest 5577+",
+            "description": "Target Everest 5577+ which uses .NET 8."
+        },
         "IncludeSession": {
             "type": "parameter",
             "dataType": "bool",
@@ -34,14 +42,6 @@
             "defaultValue": "false",
             "displayName": "Include module save data",
             "description": "Includes a blank EverestModuleSaveData class and configures the module to look for it."
-        },
-        "EverestVersion": {
-            "type": "parameter",
-            "dataType": "integer",
-            "replaces": "$(TemplateEverestVersion)",
-            "defaultValue": "4465",
-            "displayName": "Everest version",
-            "description": "Everest version that will be used in everest.yaml."
         },
         "ModInitialVersion": {
             "type": "parameter",

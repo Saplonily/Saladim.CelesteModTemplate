@@ -2,11 +2,12 @@
   <Import Project="CelesteMod.props" />
 
   <PropertyGroup>
+    <TargetFramework Condition="$(UseDotNet8) == 'true'">net8.0</TargetFramework>
     <RootNamespace>Celeste.Mod.MyCelesteMod</RootNamespace>
     <LangVersion>latest</LangVersion>
     <ImplicitUsings>enable</ImplicitUsings>
-    <UseCelesteAnalyzer Condition="'$(UseAnalyzer)' == 'false'">false</UseCelesteAnalyzer>
-    <UseCelestePublicizer Condition="'$(UsePublicizer)' == 'false'">false</UseCelestePublicizer>
+    <UseCelesteAnalyzer Condition="$(UseAnalyzer) == 'false'">false</UseCelesteAnalyzer>
+    <UseCelestePublicizer Condition="$(UsePublicizer) == 'false'">false</UseCelestePublicizer>
   </PropertyGroup>
 
   <ItemGroup>

@@ -9,11 +9,19 @@
     "shortName": "sapcelestemode",
     "sourceName": "MyCelesteMod",
     "preferNameDirectory": true,
+    "defaultName": "CelesteHelper1",
     "tags": {
         "language": "C#",
         "type": "project"
     },
     "symbols": {
+        "UseDotNet8": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "true",
+            "displayName": "Target Everest 5577+",
+            "description": "Target Everest 5577+ which uses .NET 8."
+        },
         "CelesteRootPath": {
             "type": "parameter",
             "datatype": "text",
@@ -43,14 +51,6 @@
             "displayName": "Include module save data",
             "description": "Includes a blank EverestModuleSaveData class and configures the module to look for it."
         },
-        "EverestVersion": {
-            "type": "parameter",
-            "dataType": "integer",
-            "replaces": "$(TemplateEverestVersion)",
-            "defaultValue": "4465",
-            "displayName": "Everest version",
-            "description": "Everest version that will be used in everest.yaml."
-        },
         "ModInitialVersion": {
             "type": "parameter",
             "dataType": "string",
@@ -72,6 +72,13 @@
             "defaultValue": "true",
             "displayName": "Use analyzer",
             "description": "Whether to use the celeste mod analyzer. A Roslyn analyzer for Celeste mods."
+        },
+        "IncludePublishToZipPSScript": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "true",
+            "displayName": "Include publishToZip.ps1",
+            "description": "Add a pwsh script file that automatically build and pack your mod."
         }
     },
     "sources": [
@@ -101,6 +108,12 @@
                     "condition": "(!IncludeSaveData)",
                     "exclude": [
                         "MyCelesteModSaveData.cs"
+                    ]
+                },
+                {
+                    "condition": "(!IncludePublishToZipPSScript)",
+                    "exclude": [
+                        "publishToZip.ps1"
                     ]
                 }
             ]

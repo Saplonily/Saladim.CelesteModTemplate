@@ -3,4 +3,8 @@
   DLL: Code/MyCelesteMod.dll
   Dependencies:
     - Name: EverestCore
-      Version: 1.$(TemplateEverestVersion).0
+#if UseDotNet8
+      Version: 1.5577.0
+#else
+      Version: 1.4465.0
+#endif
